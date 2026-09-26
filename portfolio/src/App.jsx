@@ -280,10 +280,10 @@ export default function App() {
         }
       `}</style>
 
-      <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 28px", borderBottom: "1px solid rgba(255,255,255,0.06)", position: "sticky", top: 5, background: "rgba(10,10,15,0.85)", backdropFilter: "blur(12px)", zIndex: 50 }}>
+      <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: isMobile ? "12px 16px" : "14px 28px", borderBottom: "1px solid rgba(255,255,255,0.06)", position: "sticky", top: 0, background: "rgba(10,10,15,0.85)", backdropFilter: "blur(12px)", zIndex: 50 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}><div style={{ width: 36, height: 36, borderRadius: 10, background: "linear-gradient(135deg,#8b5cf6,#06ffa5)", display: "grid", placeItems: "center", fontWeight: 800, color: "#000" }}>TA</div>Portifolio Interativo</div>
-        <nav className="header-nav-desktop" style={{ display: "flex", gap: 30, fontSize: 20, alignItems: "center" }}><a href="#sobre" style={{ color: "#fff", textDecoration: "none" }}> SOBRE</a><a href="#projetos" style={{ color: "#fff", textDecoration: "none" }}> PROJETOS</a><a href="#skills" style={{ color: "#fff", textDecoration: "none" }}> SKILLS</a><a href="#contato" style={{ color: "#fff", textDecoration: "none" }}> CONTATO</a><button onClick={() => document.getElementById("jogo")?.scrollIntoView({ behavior: "smooth", block: "center" })} style={{ padding: "8px 16px", borderRadius: 20, background: "#fff", color: "#000", fontWeight: 700, border: "none", cursor: "pointer", transition: "all 0.25s cubic-bezier(0.34,1.56,0.64,1)" }} className="btn-jogar">🎮 JOGAR</button></nav>
-        <button className="mobile-menu-btn" onClick={()=>setMobileMenu(!mobileMenu)} style={{ width:36, height:36, borderRadius:10, background:"rgba(255,255,255,0.08)", border:"1px solid rgba(255,255,255,0.1)", color:"#fff", display:"none", placeItems:"center" }}>{mobileMenu ? "✕" : "☰"}</button>
+        <nav className="header-nav-desktop" style={{ display: isMobile ? "none" : "flex", gap: 30, fontSize: 20, alignItems: "center" }}><a href="#sobre" style={{ color: "#fff", textDecoration: "none" }}> SOBRE</a><a href="#projetos" style={{ color: "#fff", textDecoration: "none" }}> PROJETOS</a><a href="#skills" style={{ color: "#fff", textDecoration: "none" }}> SKILLS</a><a href="#contato" style={{ color: "#fff", textDecoration: "none" }}> CONTATO</a><button onClick={() => document.getElementById("jogo")?.scrollIntoView({ behavior: "smooth", block: "center" })} style={{ padding: "8px 16px", borderRadius: 20, background: "#fff", color: "#000", fontWeight: 700, border: "none", cursor: "pointer", transition: "all 0.25s cubic-bezier(0.34,1.56,0.64,1)" }} className="btn-jogar">🎮 JOGAR</button></nav>
+        <button className="mobile-menu-btn" onClick={()=>setMobileMenu(!mobileMenu)} style={{ width:36, height:36, borderRadius:10, background:"rgba(255,255,255,0.08)", border:"1px solid rgba(255,255,255,0.1)", color:"#fff", display: isMobile ? "grid" : "none", placeItems:"center" }}>{mobileMenu ? "✕" : "☰"}</button>
       </header>
       {mobileMenu && (
         <div style={{ position:"fixed", top:60, left:0, right:0, background:"rgba(10,10,15,0.98)", zIndex:49, padding:16, display:"flex", flexDirection:"column", gap:10, borderBottom:"1px solid rgba(255,255,255,0.08)" }}>
@@ -295,7 +295,7 @@ export default function App() {
         </div>
       )}
 
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 20px", display: "grid", gridTemplateColumns: "1.15fr 0.85fr", gap: 24, alignItems: "start" }}>
+      <section style={{ maxWidth: 1200, margin: "0 auto", padding: isMobile ? "24px 16px" : "48px 20px", display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1.15fr 0.85fr", gap: isMobile ? 20 : 24, alignItems: "start" }}>
         <div>
           <h1 className="nome-hover" style={{ fontSize: "clamp(48px,6vw,84px)", lineHeight: 0.9, fontWeight: 800 }}>THIAGO<br /><span style={{ background: "linear-gradient(90deg,#8b5cf6,#06ffa5)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>ANCHIETA</span></h1>
           <p style={{ opacity: 0.7, marginTop: 30, lineHeight: 1.6, fontSize: 14, maxWidth: 420 }}>Portfolio que você navega jogando. Controle o astronauta dev, pouse nas ilhas e explore meu trabalho. Venha me conhecer um pouco mais.</p>
@@ -322,7 +322,7 @@ export default function App() {
 
       <section id="sobre" style={{ maxWidth: 1200, margin: "0 auto", padding: "20px 20px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}><div style={{ width: 32, height: 32, borderRadius: 8, background: "#8b5cf6", display: "grid", placeItems: "center" }}>✦</div><h2 style={{ fontSize: 24, fontWeight: 800 }}>SOBRE_MIM</h2><div style={{ flex: 1, height: 1, background: "linear-gradient(90deg,rgba(139,92,246,0.3),transparent)", marginLeft: 12 }} /><button onClick={() => setEditingBio(!editingBio)} style={{ padding: "6px 12px", borderRadius: 20, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", color: "#fff", fontSize: 11 }}>✎ Editar bio</button></div>
-        <div style={{ display: "grid", gridTemplateColumns: "320px 1fr", gap: 16 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "320px 1fr", gap: 16 }}>
           <div className="glass" style={{ padding: 18, borderRadius: 20 }}>
             <div style={{ background: "linear-gradient(180deg,#1a1033,#0f1f1a)", borderRadius: 16, padding: 16, border: "1px solid rgba(255,255,255,0.08)", textAlign: "center" }}>
               <img src={fotoThiago} alt="Thiago Anchieta" style={{ width: 140, height: 140, borderRadius: "50%", objectFit: "cover", margin: "0 auto", display: "block", border: "2px solid rgba(139,92,246,0.4)", boxShadow: "0 0 20px rgba(139,92,246,0.3)" }} />
@@ -345,7 +345,7 @@ export default function App() {
 
       <section id="projetos" style={{ maxWidth: 1200, margin: "0 auto", padding: "20px 20px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}><div style={{ width: 32, height: 32, borderRadius: 8, background: "#06ffa5", display: "grid", placeItems: "center", color: "#000" }}>&lt;/&gt;</div><h2 style={{ fontSize: 24, fontWeight: 800 }}>PROJETOS</h2><div style={{ flex: 1, height: 1, background: "linear-gradient(90deg,rgba(6,255,165,0.3),transparent)", marginLeft: 12 }} /></div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3,1fr)", gap: 14 }}>
           {PROJECTS.map(p => (
             <div key={p.id} className="glass project-card" style={{ padding: 18 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -368,7 +368,7 @@ export default function App() {
 
       <section id="skills" style={{ maxWidth: 1200, margin: "0 auto", padding: "20px 20px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}><div style={{ width: 32, height: 32, borderRadius: 8, background: "#f472b6", display: "grid", placeItems: "center", color: "#000" }}>⚡</div><h2 style={{ fontSize: 24, fontWeight: 800 }}>SKILLS</h2><div style={{ flex: 1, height: 1, background: "linear-gradient(90deg,rgba(244,114,182,0.3),transparent)", marginLeft: 12 }} /></div>
-        <div className="glass" style={{ padding: 16, display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 12 }}>
+        <div className="glass" style={{ padding: 16, display: "grid", gridTemplateColumns: isMobile ? "repeat(2,1fr)" : "repeat(4,1fr)", gap: 12 }}>
           {SKILLS.map(s => (
             <div key={s.name} className="glass skill-orb-card" style={{ padding: 14, '--skill-color': s.color, '--skill-color-soft': `${s.color}55` }}>
               <div style={{ display: "flex", justifyContent: "space-between" }}><div style={{ width: 36, height: 36, borderRadius: 10, background: `${s.color}20`, border: `1px solid ${s.color}40`, display: "grid", placeItems: "center", color: s.color, fontWeight: 700, fontSize: 12 }}>{s.icon}</div><span style={{ fontSize: 10, padding: "11px 8px", borderRadius: 20, background: "rgba(255,255,255,0.06)" }}>{s.level}%</span></div>
@@ -381,10 +381,10 @@ export default function App() {
 
             <section id="contato" style={{ maxWidth: 1200, margin: "0 auto", padding: "20px 20px 60px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}><div style={{ width: 32, height: 32, borderRadius: 8, background: "#fbbf24", display: "grid", placeItems: "center", color: "#000" }}>✉</div><h2 style={{ fontSize: 24, fontWeight: 800 }}>CONTATO</h2><div style={{ flex: 1, height: 1, background: "linear-gradient(90deg,rgba(251,191,36,0.3),transparent)", marginLeft: 12 }} /><span style={{ fontSize: 10, opacity: 0.4 }}>EASTER EGG: digite "dev"</span></div>
-        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 16 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1.2fr 0.8fr", gap: 16 }}>
           <div className="glass" style={{ padding: 18 }}>
             <div style={{ fontSize: 10, letterSpacing: "0.15em", opacity: 0.4, marginBottom: 12 }}>FORMULÁRIO • FUNCIONANDO</div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 10 }}>
               <input 
                 placeholder="Seu nome" 
                 value={formData.nome}
