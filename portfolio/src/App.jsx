@@ -431,10 +431,10 @@ ${formData.msg}`;
             <div style={{ display: "grid", gap: 10 }}>
               <a href="https://github.com/thiagoanchietapaiva-cloud?tab=repositories" target="_blank" rel="noopener noreferrer" style={{ padding: "12px 14px", borderRadius: 12, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", color: "#fff", textDecoration: "none", fontSize: 12, display: "flex", justifyContent: "space-between", transition: "all 0.2s ease" }} className="project-icon-btn">github.com/thiagoanchieta <span>↗</span></a>
               <a href="https://wa.me/5585994062045" target="_blank" rel="noopener noreferrer" style={{ padding: "12px 14px", borderRadius: 12, background: "rgba(37,211,102,0.12)", border: "1px solid rgba(37,211,102,0.3)", color: "#25D366", textDecoration: "none", fontSize: 12, display: "flex", justifyContent: "space-between", fontWeight: 700, transition: "all 0.2s ease" }} className="project-icon-btn">💬 WhatsApp: +55 (85) 99406-2045 <span>↗</span></a>
-              <a href="mailto:thiagoanchietapaiva@gmail.com" style={{ padding: "12px 14px", borderRadius: 12, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", color: "#fff", textDecoration: "none", fontSize: 12, display: "flex", justifyContent: "space-between", transition: "all 0.2s ease" }} className="project-icon-btn">thiagoanchietapaiva@gmail.com <span>↗</span></a>
+              <a href="mailto:thiagoanchietapaiva@gmail.com" style={{ padding: "12px 14px", borderRadius: 12, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", color: "#fff", textDecoration: "none", fontSize: 15, display: "flex", justifyContent: "space-between", transition: "all 0.2s ease" }} className="project-icon-btn">thiagoanchietapaiva@gmail.com <span>↗</span></a>
             </div>
-            <div style={{ marginTop: 14, padding: "10px 12px", borderRadius: 10, background: "rgba(251,191,36,0.08)", border: "1px solid rgba(251,191,36,0.15)", fontSize: 10, opacity: 0.7, lineHeight: 1.4 }}>
-              ⚡ Respondo em até 24h. Bora tirar sua ideia do papel?
+            <div style={{ marginTop: 14, padding: "10px 12px", borderRadius: 10, background: "rgba(186, 36, 251, 0.54)", border: "1px solid rgba(251, 36, 201, 0.15)", fontSize: 10, opacity: 0.7, lineHeight: 1.4 }}>
+            Respondo em até 24h. Bora tirar sua ideia do papel?
             </div>
           </div>
         </div>
