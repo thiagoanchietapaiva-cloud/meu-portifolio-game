@@ -149,23 +149,38 @@ export default function App() {
         *{margin:0;padding:0;box-sizing:border-box}
         body{background:#0a0a0f;color:#fff;font-family:'JetBrains Mono',monospace;overflow-x:hidden}
         .glass{background:rgba(255,255,255,0.04);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.08);border-radius:16px}
-        .hero{max-width:1200px;margin:0 auto;padding:48px 20px;display:grid;grid-template-columns:1.15fr 0.85fr;gap:24px}
-        .sobre{max-width:1200px;margin:0 auto;padding:20px 20px;display:grid;grid-template-columns:320px 1fr;gap:16px}
-        .projetos{max-width:1200px;margin:0 auto;padding:20px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-        .skills{max-width:1200px;margin:0 auto;padding:20px 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-        .contato{max-width:1200px;margin:0 auto;padding:20px 20px 60px;display:grid;grid-template-columns:1.2fr 0.8fr;gap:16px}
-        .header-nav{display:flex;gap:18px;align-items:center}
+        .hero{max-width:1200px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:1.15fr 0.85fr;gap:32px;align-items:start}
+        .sobre-wrap{max-width:1200px;margin:0 auto;padding:32px 24px}
+        .sobre{ display:grid;grid-template-columns:340px 1fr;gap:20px}
+        .projetos-wrap{max-width:1200px;margin:0 auto;padding:32px 24px}
+        .projetos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .skills-wrap{max-width:1200px;margin:0 auto;padding:32px 24px}
+        .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+        .contato-wrap{max-width:1200px;margin:0 auto;padding:32px 24px 80px}
+        .contato{display:grid;grid-template-columns:1.2fr 0.8fr;gap:20px}
+        .header-nav{display:flex;gap:24px;align-items:center}
         .mobile-menu-btn{display:none}
         .joystick{display:none}
+        @media(max-width:1024px){
+          .projetos{grid-template-columns:repeat(2,1fr)}
+          .skills{grid-template-columns:repeat(3,1fr)}
+        }
         @media(max-width:900px){
-          .hero{grid-template-columns:1fr; padding:24px 16px}
+          .hero{grid-template-columns:1fr; padding:28px 16px; gap:24px}
+          .sobre-wrap{padding:20px 16px}
           .sobre{grid-template-columns:1fr}
+          .projetos-wrap{padding:20px 16px}
           .projetos{grid-template-columns:1fr}
+          .skills-wrap{padding:20px 16px}
           .skills{grid-template-columns:repeat(2,1fr)}
+          .contato-wrap{padding:20px 16px 40px}
           .contato{grid-template-columns:1fr}
           .header-nav{display:none}
           .mobile-menu-btn{display:grid}
           .joystick{display:flex}
+        }
+        @media(max-width:480px){
+          .skills{grid-template-columns:1fr}
         }
       `}</style>
 
@@ -223,7 +238,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="sobre" style={{ maxWidth:1200, margin:"0 auto", padding:"20px 16px" }}>
+      <section id="sobre" className="sobre-wrap">
         <h2 style={{ fontSize:20, fontWeight:800, marginBottom:12 }}>SOBRE_MIM</h2>
         <div className="sobre">
           <div className="glass" style={{ padding:16, textAlign:"center" }}>
@@ -236,7 +251,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="projetos" style={{ maxWidth:1200, margin:"0 auto", padding:"20px 16px" }}>
+      <section id="projetos" className="projetos-wrap">
         <h2 style={{ fontSize:20, fontWeight:800, marginBottom:12 }}>PROJETOS</h2>
         <div className="projetos">
           {PROJECTS.map(p=>(
@@ -253,7 +268,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="skills" style={{ maxWidth:1200, margin:"0 auto", padding:"20px 16px" }}>
+      <section id="skills" className="skills-wrap">
         <h2 style={{ fontSize:20, fontWeight:800, marginBottom:12 }}>SKILLS</h2>
         <div className="glass" style={{ padding:12 }}>
           <div className="skills" style={{ padding:0, maxWidth:"none" }}>
@@ -267,7 +282,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="contato" style={{ maxWidth:1200, margin:"0 auto", padding:"20px 16px 40px" }}>
+      <section id="contato" className="contato-wrap">
         <h2 style={{ fontSize:20, fontWeight:800, marginBottom:12 }}>CONTATO</h2>
         <div className="contato">
           <div className="glass" style={{ padding:16 }}>
