@@ -413,18 +413,9 @@ ${formData.msg}`;
                 setTimeout(()=>setSent(false), 4000);
               }}
               style={{ marginTop: 12, width: "100%", padding: "12px", borderRadius: 12, background: sent ? "#06ffa5" : "#fff", color: "#000", fontWeight: 700, border: "none", cursor: "pointer", transition: "all 0.3s ease" }}>
-              {sent ? "✅ Abrindo WhatsApp..." : "Enviar no WhatsApp ✨"}
+              {sent ? " Abrindo WhatsApp..." : "Enviar no WhatsApp "}
             </button>
-            <button 
-              onClick={()=>{
-                if(!formData.nome || !formData.msg){ alert("Preencha nome e mensagem!"); return; }
-                const subject = `Contato portfólio - ${formData.nome}`;
-                const body = `Nome: ${formData.nome}%0D%0AEmail: ${formData.email}%0D%0A%0D%0A${formData.msg}`;
-                window.location.href = `mailto:thiagoanchietapaiva@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-              }}
-              style={{ marginTop: 8, width: "100%", padding: "10px", borderRadius: 12, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", color: "#fff", fontWeight: 600, cursor: "pointer" }}>
-              Ou enviar por E-mail 📧
-            </button>
+
           </div>
           <div className="glass" style={{ padding: 18 }}>
             <div style={{ fontWeight: 700, marginBottom: 12 }}>Links diretos</div>
