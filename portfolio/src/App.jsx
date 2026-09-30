@@ -9,14 +9,14 @@ const ISLANDS = [
 ];
 
 const SKILLS = [
-  { name: "JavaScript", level: 75, color: "#facc15", icon: "JS" },
-  { name: "React", level: 82, color: "#22d3ee", icon: "⚛" },
-  { name: "Node.js", level: 68, color: "#06ffa5", icon: "⬢" },
-  { name: "TypeScript", level: 75, color: "#3b82f6", icon: "TS" },
-  { name: "Python", level: 60, color: "#60a5fa", icon: "Py" },
-  { name: "Git", level: 80, color: "#f05032", icon: "⎇" },
-  { name: "Tailwind", level: 78, color: "#06b6d4", icon: "≋" },
-  { name: "SQL", level: 70, color: "#8b5cf6", icon: "◫" },
+  { name: "JavaScript", color: "#facc15", icon: "JS" },
+  { name: "React", color: "#22d3ee", icon: "⚛" },
+  { name: "Node.js", color: "#06ffa5", icon: "⬢" },
+  { name: "TypeScript", color: "#3b82f6", icon: "TS" },
+  { name: "Python", color: "#60a5fa", icon: "Py" },
+  { name: "Git", color: "#f05032", icon: "⎇" },
+  { name: "Tailwind", color: "#06b6d4", icon: "≋" },
+  { name: "SQL", color: "#8b5cf6", icon: "◫" },
 ];
 
 const PROJECTS = [
@@ -326,7 +326,7 @@ export default function App() {
           <div className="glass" style={{ padding: 18, borderRadius: 20 }}>
             <div style={{ background: "linear-gradient(180deg,#1a1033,#0f1f1a)", borderRadius: 16, padding: 16, border: "1px solid rgba(255,255,255,0.08)", textAlign: "center" }}>
               <img src={fotoThiago} alt="Thiago Anchieta" style={{ width: 140, height: 140, borderRadius: "50%", objectFit: "cover", margin: "0 auto", display: "block", border: "2px solid rgba(139,92,246,0.4)", boxShadow: "0 0 20px rgba(139,92,246,0.3)" }} />
-              <div style={{ fontWeight: 700, marginTop: 10 }}>Thiago Anchieta</div><div style={{ fontSize: 11, opacity: 0.6 }}>Fullstack • Junior • ADS</div>
+              <div style={{ fontWeight: 700, marginTop: 10 }}>Thiago Anchieta</div><div style={{ fontSize: 11, opacity: 0.6 }}>• Fullstack •</div>
               <div style={{ marginTop: 10, fontSize: 10, padding: "6px 10px", borderRadius: 20, background: "rgba(6,255,165,0.15)", border: "1px solid rgba(6,255,165,0.3)", color: "#06ffa5", display: "inline-block" }}>• disponível para freela</div>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginTop: 12 }}>
@@ -367,13 +367,13 @@ export default function App() {
       </section>
 
       <section id="skills" style={{ maxWidth: 1200, margin: "0 auto", padding: "20px 20px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}><div style={{ width: 32, height: 32, borderRadius: 8, background: "#f472b6", display: "grid", placeItems: "center", color: "#000" }}>⚡</div><h2 style={{ fontSize: 24, fontWeight: 800 }}>SKILLS</h2><div style={{ flex: 1, height: 1, background: "linear-gradient(90deg,rgba(244,114,182,0.3),transparent)", marginLeft: 12 }} /></div>
+        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}><div style={{ width: 32, height: 32, borderRadius: 8, background: "#f472b6", display: "grid", placeItems: "center", color: "#000" }}></div><h2 style={{ fontSize: 24, fontWeight: 800 }}>SKILLS</h2><div style={{ flex: 1, height: 1, background: "linear-gradient(90deg,rgba(244,114,182,0.3),transparent)", marginLeft: 12 }} /></div>
         <div className="glass" style={{ padding: 16, display: "grid", gridTemplateColumns: isMobile ? "repeat(2,1fr)" : "repeat(4,1fr)", gap: 12 }}>
           {SKILLS.map(s => (
             <div key={s.name} className="glass skill-orb-card" style={{ padding: 14, '--skill-color': s.color, '--skill-color-soft': `${s.color}55` }}>
-              <div style={{ display: "flex", justifyContent: "space-between" }}><div style={{ width: 36, height: 36, borderRadius: 10, background: `${s.color}20`, border: `1px solid ${s.color}40`, display: "grid", placeItems: "center", color: s.color, fontWeight: 700, fontSize: 12 }}>{s.icon}</div><span style={{ fontSize: 10, padding: "11px 8px", borderRadius: 20, background: "rgba(255,255,255,0.06)" }}>{s.level}%</span></div>
-              <div style={{ marginTop: 15, fontWeight: 700, fontSize: 20 }}>{s.name}</div>
-              <div style={{ marginTop: 30, height: 5, borderRadius: 10, background: "rgba(255,255,255,0.1)" }}><div style={{ width: `${s.level}%`, height: "100%", borderRadius: 10, background: s.color }} /></div>
+              <div style={{ display: "flex", justifyContent: "space-between" }}><div style={{ width: 36, height: 36, borderRadius: 10, background: `${s.color}20`, border: `1px solid ${s.color}40`, display: "grid", placeItems: "center", color: s.color, fontWeight: 700, fontSize: 20 }}>{s.icon}</div></div>
+              <div style={{ marginTop: 15, fontWeight: 700, fontSize: 25 }}>{s.name}</div>
+              
             </div>
           ))}
         </div>
