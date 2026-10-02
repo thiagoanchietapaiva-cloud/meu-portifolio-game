@@ -29,18 +29,20 @@ const PROJECTS = [
     github: "https://github.com/thiagoanchietapaiva-cloud/html-css-landing-page",
     demo: "https://meow-t5cd.onrender.com"
   },
-  { 
-    id: "02", 
-    title: "Landing Page - ANIMEWEAR", 
-    desc: "Landing page fictícia de uma loja de camisas de anime. Inspirada na mesma estrutura do projeto Meow Café, mas com identidade totalmente nova voltada para o público geek. Foco em conversão com botões com micro-interações, grade de produtos responsiva e hero com modelo vestindo a peça.", 
-    stack: ["HTML5", "CSS3"], 
-    color: "#06ffa5", 
-    github: "https://github.com/thiagoanchietapaiva-cloud/LojaGeek.git", 
-    demo: "https://lojageek.onrender.com" },
-  { 
-    id: "03", title: "Linktree Responsivo", desc: "Página de links pessoal inspirada no Linktree, desenvolvida com HTML semântico e CSS puro. Design minimalista com avatar, redes sociais (Instagram, GitHub e WhatsApp) e botões de call-to-action.", stack: ["HTML5", "CSS3"], color: "#f472b6", 
-    github: "https://github.com/thiagoanchietapaiva-cloud/html-css-linktree.git", 
-    demo: "https://html-css-linktree-0d7k.onrender.com" },
+  {
+    id: "02",
+    title: "Landing Page - ANIMEWEAR",
+    desc: "Landing page fictícia de uma loja de camisas de anime. Inspirada na mesma estrutura do projeto Meow Café, mas com identidade totalmente nova voltada para o público geek. Foco em conversão com botões com micro-interações, grade de produtos responsiva e hero com modelo vestindo a peça.",
+    stack: ["HTML5", "CSS3"],
+    color: "#06ffa5",
+    github: "https://github.com/thiagoanchietapaiva-cloud/LojaGeek.git",
+    demo: "https://lojageek.onrender.com"
+  },
+  {
+    id: "03", title: "Linktree Responsivo", desc: "Página de links pessoal inspirada no Linktree, desenvolvida com HTML semântico e CSS puro. Design minimalista com avatar, redes sociais (Instagram, GitHub e WhatsApp) e botões de call-to-action.", stack: ["HTML5", "CSS3"], color: "#f472b6",
+    github: "https://github.com/thiagoanchietapaiva-cloud/html-css-linktree.git",
+    demo: "https://html-css-linktree-0d7k.onrender.com"
+  },
 ];
 
 export default function App() {
@@ -120,7 +122,7 @@ export default function App() {
         ctx.arc(s.x * W, s.y * H, s.r, 0, Math.PI * 2); ctx.fill(); ctx.shadowBlur = 0;
       });
       ctx.globalAlpha = 1;
-      const grad = ctx.createRadialGradient(W*0.2, H*0.2, 0, W*0.2, H*0.2, W*0.6);
+      const grad = ctx.createRadialGradient(W * 0.2, H * 0.2, 0, W * 0.2, H * 0.2, W * 0.6);
       grad.addColorStop(0, "rgba(139,92,246,0.08)"); grad.addColorStop(1, "rgba(0,0,0,0)");
       ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
 
@@ -267,6 +269,7 @@ export default function App() {
           .header-nav-desktop{display:none !important}
           .mobile-menu-btn{display:grid !important}
           .joystick{display:flex !important}
+          .game-wrapper{display:none !important}
           section[style*="gridTemplateColumns: 1.15fr"]{grid-template-columns:1fr !important; padding:24px 16px !important}
           section[style*="gridTemplateColumns: 320px"]{grid-template-columns:1fr !important}
           div[style*="gridTemplateColumns: repeat(3,1fr)"]{grid-template-columns:1fr !important}
@@ -283,15 +286,15 @@ export default function App() {
       <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: isMobile ? "12px 16px" : "14px 28px", borderBottom: "1px solid rgba(255,255,255,0.06)", position: "sticky", top: 0, background: "rgba(10,10,15,0.85)", backdropFilter: "blur(12px)", zIndex: 50 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}><div style={{ width: 36, height: 36, borderRadius: 10, background: "linear-gradient(135deg,#8b5cf6,#06ffa5)", display: "grid", placeItems: "center", fontWeight: 800, color: "#000" }}>TA</div>Portifolio Interativo</div>
         <nav className="header-nav-desktop" style={{ display: isMobile ? "none" : "flex", gap: 30, fontSize: 20, alignItems: "center" }}><a href="#sobre" style={{ color: "#fff", textDecoration: "none" }}> SOBRE</a><a href="#projetos" style={{ color: "#fff", textDecoration: "none" }}> PROJETOS</a><a href="#skills" style={{ color: "#fff", textDecoration: "none" }}> SKILLS</a><a href="#contato" style={{ color: "#fff", textDecoration: "none" }}> CONTATO</a><button onClick={() => document.getElementById("jogo")?.scrollIntoView({ behavior: "smooth", block: "center" })} style={{ padding: "8px 16px", borderRadius: 20, background: "#fff", color: "#000", fontWeight: 700, border: "none", cursor: "pointer", transition: "all 0.25s cubic-bezier(0.34,1.56,0.64,1)" }} className="btn-jogar">🎮 JOGAR</button></nav>
-        <button className="mobile-menu-btn" onClick={()=>setMobileMenu(!mobileMenu)} style={{ width:36, height:36, borderRadius:10, background:"rgba(255,255,255,0.08)", border:"1px solid rgba(255,255,255,0.1)", color:"#fff", display: isMobile ? "grid" : "none", placeItems:"center" }}>{mobileMenu ? "✕" : "☰"}</button>
+        <button className="mobile-menu-btn" onClick={() => setMobileMenu(!mobileMenu)} style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.1)", color: "#fff", display: isMobile ? "grid" : "none", placeItems: "center" }}>{mobileMenu ? "✕" : "☰"}</button>
       </header>
       {mobileMenu && (
-        <div style={{ position:"fixed", top:60, left:0, right:0, background:"rgba(10,10,15,0.98)", zIndex:49, padding:16, display:"flex", flexDirection:"column", gap:10, borderBottom:"1px solid rgba(255,255,255,0.08)" }}>
-          <a href="#sobre" onClick={()=>setMobileMenu(false)} style={{ padding:"12px", background:"rgba(255,255,255,0.05)", borderRadius:10, color:"#fff", textDecoration:"none", fontWeight:700 }}>SOBRE</a>
-          <a href="#projetos" onClick={()=>setMobileMenu(false)} style={{ padding:"12px", background:"rgba(255,255,255,0.05)", borderRadius:10, color:"#fff", textDecoration:"none", fontWeight:700 }}>PROJETOS</a>
-          <a href="#skills" onClick={()=>setMobileMenu(false)} style={{ padding:"12px", background:"rgba(255,255,255,0.05)", borderRadius:10, color:"#fff", textDecoration:"none", fontWeight:700 }}>SKILLS</a>
-          <a href="#contato" onClick={()=>setMobileMenu(false)} style={{ padding:"12px", background:"rgba(255,255,255,0.05)", borderRadius:10, color:"#fff", textDecoration:"none", fontWeight:700 }}>CONTATO</a>
-          <a href="#jogo" onClick={()=>setMobileMenu(false)} style={{ padding:"12px", background:"#fff", borderRadius:10, color:"#000", textDecoration:"none", fontWeight:800, textAlign:"center" }}>🎮 JOGAR</a>
+        <div style={{ position: "fixed", top: 60, left: 0, right: 0, background: "rgba(10,10,15,0.98)", zIndex: 49, padding: 16, display: "flex", flexDirection: "column", gap: 10, borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+          <a href="#sobre" onClick={() => setMobileMenu(false)} style={{ padding: "12px", background: "rgba(255,255,255,0.05)", borderRadius: 10, color: "#fff", textDecoration: "none", fontWeight: 700 }}>SOBRE</a>
+          <a href="#projetos" onClick={() => setMobileMenu(false)} style={{ padding: "12px", background: "rgba(255,255,255,0.05)", borderRadius: 10, color: "#fff", textDecoration: "none", fontWeight: 700 }}>PROJETOS</a>
+          <a href="#skills" onClick={() => setMobileMenu(false)} style={{ padding: "12px", background: "rgba(255,255,255,0.05)", borderRadius: 10, color: "#fff", textDecoration: "none", fontWeight: 700 }}>SKILLS</a>
+          <a href="#contato" onClick={() => setMobileMenu(false)} style={{ padding: "12px", background: "rgba(255,255,255,0.05)", borderRadius: 10, color: "#fff", textDecoration: "none", fontWeight: 700 }}>CONTATO</a>
+          <a href="#jogo" onClick={() => setMobileMenu(false)} style={{ padding: "12px", background: "#fff", borderRadius: 10, color: "#000", textDecoration: "none", fontWeight: 800, textAlign: "center" }}>🎮JOGAR</a>
         </div>
       )}
 
@@ -299,7 +302,7 @@ export default function App() {
         <div>
           <h1 className="nome-hover" style={{ fontSize: "clamp(48px,6vw,84px)", lineHeight: 0.9, fontWeight: 800 }}>THIAGO<br /><span style={{ background: "linear-gradient(90deg,#8b5cf6,#06ffa5)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>ANCHIETA</span></h1>
           <p style={{ opacity: 0.7, marginTop: 30, lineHeight: 1.6, fontSize: 14, maxWidth: 420 }}>Portfolio que você navega jogando. Controle o astronauta dev, pouse nas ilhas e explore meu trabalho. Venha me conhecer um pouco mais.</p>
-          <div style={{ display: "flex", gap: 10, marginTop: 30, flexWrap: "wrap" }}><span style={{ fontSize: 11, padding: "6px 10px", borderRadius: 20, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}>⚡ Interativo </span><span style={{ fontSize: 11, padding: "6px 10px", borderRadius: 20, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}>🚀 Navegue pelo meu portifólio </span></div>
+          <div style={{ display: "flex", gap: 10, marginTop: 30, flexWrap: "wrap" }}><span style={{ fontSize: 11, padding: "6px 10px", borderRadius: 20, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}>Interativo </span><span style={{ fontSize: 11, padding: "6px 10px", borderRadius: 20, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}>Navegue pelo meu portifólio </span></div>
           <div style={{ display: "flex", gap: 12, marginTop: 30 }}>
             <button className="btn-ver-projetos" onClick={() => document.getElementById("projetos")?.scrollIntoView({ behavior: "smooth" })} style={{ padding: "15px 25px", borderRadius: 14, background: "#fff", color: "#000", fontWeight: 700, border: "none" }}>
               Ver projetos
@@ -308,7 +311,7 @@ export default function App() {
             <button className="btn-sobre-mim" onClick={() => document.getElementById("sobre")?.scrollIntoView({ behavior: "smooth" })} style={{ padding: "22px 34px", borderRadius: 15, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", color: "#fff" }}>Sobre mim</button>
           </div>
         </div>
-        <div id="jogo" style={{ padding: "1px", borderRadius: 22, background: "linear-gradient(135deg, rgba(139,92,246,0.6), rgba(6,255,165,0.35), rgba(244,114,182,0.4), rgba(251,191,36,0.35))", boxShadow: "0 0 0 1px rgba(255,255,255,0.05) inset, 0 0 30px rgba(139,92,246,0.18), 0 0 60px rgba(6,255,165,0.1)" }}>
+        <div id="jogo" className="game-wrapper" style={{ padding: "1px", borderRadius: 22, background: "linear-gradient(135deg, rgba(139,92,246,0.6), rgba(6,255,165,0.35), rgba(244,114,182,0.4), rgba(251,191,36,0.35))", boxShadow: "0 0 0 1px rgba(255,255,255,0.05) inset, 0 0 30px rgba(139,92,246,0.18), 0 0 60px rgba(6,255,165,0.1)" }}>
           <div style={{ borderRadius: 20, overflow: "hidden", background: "radial-gradient(120% 120% at 20% 10%, rgba(139,92,246,0.12), transparent 50%), radial-gradient(100% 100% at 80% 90%, rgba(6,255,165,0.08), transparent 40%), rgba(12,12,18,0.96)", backdropFilter: "blur(20px)", border: "1px solid rgba(255,255,255,0.06)" }}>
             <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 14px", borderBottom: "1px solid rgba(255,255,255,0.06)", fontSize: 10, opacity: 0.6 }}><div style={{ display: "flex", gap: 6 }}><div style={{ width: 10, height: 10, borderRadius: "50%", background: "#ff5f56" }} /><div style={{ width: 10, height: 10, borderRadius: "50%", background: "#ffbd2e" }} /><div style={{ width: 10, height: 10, borderRadius: "50%", background: "#27c93f" }} /></div><span>Mapa_portfolio.exe</span><span style={{ padding: "2px 8px", borderRadius: 10, background: "rgba(255,255,255,0.06)" }}>VOANDO</span></div>
             <div style={{ padding: "10px 12px", display: "flex", gap: 8, fontSize: 9 }}><span style={{ padding: "6px 10px", borderRadius: 20, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}>🎮 WASD / SETAS PARA MOVER</span><span style={{ padding: "6px 10px", borderRadius: 20, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}>COLIDA PARA NAVEGAR</span></div>
@@ -321,7 +324,7 @@ export default function App() {
       </section>
 
       <section id="sobre" style={{ maxWidth: 1200, margin: "0 auto", padding: "20px 20px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}><div style={{ width: 32, height: 32, borderRadius: 8, background: "#8b5cf6", display: "grid", placeItems: "center" }}>✦</div><h2 style={{ fontSize: 24, fontWeight: 800 }}>SOBRE_MIM</h2><div style={{ flex: 1, height: 1, background: "linear-gradient(90deg,rgba(139,92,246,0.3),transparent)", marginLeft: 12 }} /><button onClick={() => setEditingBio(!editingBio)} style={{ padding: "6px 12px", borderRadius: 20, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", color: "#fff", fontSize: 11 }}>✎ Editar bio</button></div>
+        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}><div style={{ width: 32, height: 32, borderRadius: 8, background: "#8b5cf6", display: "grid", placeItems: "center" }}>✦</div><h2 style={{ fontSize: 24, fontWeight: 800 }}>SOBRE_MIM</h2><div style={{ flex: 1, height: 1, background: "linear-gradient(90deg,rgba(139,92,246,0.3),transparent)", marginLeft: 12 }} /></div>
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "320px 1fr", gap: 16 }}>
           <div className="glass" style={{ padding: 18, borderRadius: 20 }}>
             <div style={{ background: "linear-gradient(180deg,#1a1033,#0f1f1a)", borderRadius: 16, padding: 16, border: "1px solid rgba(255,255,255,0.08)", textAlign: "center" }}>
@@ -373,44 +376,44 @@ export default function App() {
             <div key={s.name} className="glass skill-orb-card" style={{ padding: 14, '--skill-color': s.color, '--skill-color-soft': `${s.color}55` }}>
               <div style={{ display: "flex", justifyContent: "space-between" }}><div style={{ width: 36, height: 36, borderRadius: 10, background: `${s.color}20`, border: `1px solid ${s.color}40`, display: "grid", placeItems: "center", color: s.color, fontWeight: 700, fontSize: 20 }}>{s.icon}</div></div>
               <div style={{ marginTop: 15, fontWeight: 700, fontSize: 25 }}>{s.name}</div>
-              
+
             </div>
           ))}
         </div>
       </section>
 
-            <section id="contato" style={{ maxWidth: 1200, margin: "0 auto", padding: "20px 20px 60px" }}>
+      <section id="contato" style={{ maxWidth: 1200, margin: "0 auto", padding: "20px 20px 60px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}><div style={{ width: 32, height: 32, borderRadius: 8, background: "#fbbf24", display: "grid", placeItems: "center", color: "#000" }}>✉</div><h2 style={{ fontSize: 24, fontWeight: 800 }}>CONTATO</h2><div style={{ flex: 1, height: 1, background: "linear-gradient(90deg,rgba(251,191,36,0.3),transparent)", marginLeft: 12 }} /><span style={{ fontSize: 10, opacity: 0.4 }}>EASTER EGG: digite "dev"</span></div>
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1.2fr 0.8fr", gap: 16 }}>
           <div className="glass" style={{ padding: 18 }}>
             <div style={{ fontSize: 10, letterSpacing: "0.15em", opacity: 0.4, marginBottom: 12 }}>FORMULÁRIO • FUNCIONANDO</div>
             <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 10 }}>
-              <input 
-                placeholder="Seu nome" 
+              <input
+                placeholder="Seu nome"
                 value={formData.nome}
-                onChange={(e)=>setFormData({...formData, nome: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
                 style={{ padding: "12px 14px", borderRadius: 12, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", color: "#fff" }} />
-              <input 
-                placeholder="Seu e-mail" 
+              <input
+                placeholder="Seu e-mail"
                 value={formData.email}
-                onChange={(e)=>setFormData({...formData, email: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 style={{ padding: "12px 14px", borderRadius: 12, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", color: "#fff" }} />
             </div>
-            <textarea 
-              placeholder="Fala, Thiago! Curti seu portfólio game..." 
+            <textarea
+              placeholder="Fala, Thiago! Curti seu portfólio game..."
               value={formData.msg}
-              onChange={(e)=>setFormData({...formData, msg: e.target.value})}
+              onChange={(e) => setFormData({ ...formData, msg: e.target.value })}
               style={{ width: "100%", height: 110, marginTop: 10, padding: "12px 14px", borderRadius: 12, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", color: "#fff" }} />
-            <button 
-              onClick={()=>{
-                if(!formData.nome || !formData.msg){ alert("Preencha nome e mensagem!"); return; }
+            <button
+              onClick={() => {
+                if (!formData.nome || !formData.msg) { alert("Preencha nome e mensagem!"); return; }
                 const texto = `Olá Thiago! Sou ${formData.nome} (${formData.email}).
 
 ${formData.msg}`;
                 const url = `https://wa.me/5585994062045?text=${encodeURIComponent(texto)}`;
                 window.open(url, "_blank");
                 setSent(true);
-                setTimeout(()=>setSent(false), 4000);
+                setTimeout(() => setSent(false), 4000);
               }}
               style={{ marginTop: 12, width: "100%", padding: "12px", borderRadius: 12, background: sent ? "#06ffa5" : "#fff", color: "#000", fontWeight: 700, border: "none", cursor: "pointer", transition: "all 0.3s ease" }}>
               {sent ? " Abrindo WhatsApp..." : "Enviar no WhatsApp "}
@@ -425,7 +428,7 @@ ${formData.msg}`;
               <a href="mailto:thiagoanchietapaiva@gmail.com" style={{ padding: "12px 14px", borderRadius: 12, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", color: "#fff", textDecoration: "none", fontSize: 15, display: "flex", justifyContent: "space-between", transition: "all 0.2s ease" }} className="project-icon-btn">thiagoanchietapaiva@gmail.com <span>↗</span></a>
             </div>
             <div style={{ marginTop: 14, padding: "10px 12px", borderRadius: 10, background: "rgba(186, 36, 251, 0.54)", border: "1px solid rgba(251, 36, 201, 0.15)", fontSize: 10, opacity: 0.7, lineHeight: 1.4 }}>
-            Respondo em até 24h. Bora tirar sua ideia do papel?
+              Respondo em até 24h. Bora tirar sua ideia do papel?
             </div>
           </div>
         </div>
